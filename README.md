@@ -1,31 +1,28 @@
 # bank_account
 
-Розробити програму, яка моделює банківський рахунок, що має наступні атрибути, які повинні бути з захищеним доступом:
+     (Cuenta de ahorros):
+It has an attribute to determine whether the savings account is active (type boolean). If the balance is less than $10,000, the account is inactive; otherwise, it is considered active.
 
-++ Баланс (тип float).//balance
-++ Кількість поповнень з початковим значенням нуль (тип int).//numberOfDeposits
-++ Кількість зняттів з початковим значенням нуль (тип int).//numberOfWithdrawals
-++ Річна процентна ставка (тип float).//annualInterestRate
-++ Місячна комісія з початковим значенням нуль (тип float).//monthlyFee
-Клас "Рахунок" має:
+The following methods are redefined:
 
-++ Конструктор, що ініціалізує атрибути "баланс" та "річна ставка" значеннями, переданими як параметри.
-Методи:
-++ Поповнити рахунок: додає гроші до балансу.
-++ Зняти гроші: оновлює баланс рахунку. Сума зняття не повинна перевищувати баланс.
-++ Розрахувати місячний відсоток для рахунку та оновити відповідний баланс.
-++ Місячна виписка: оновлює баланс, віднімаючи місячну комісію та розраховуючи відповідний місячний відсоток (викликає попередній метод).
-++ Друк: повертає значення атрибутів.
-Друк інформації: повертає значення всіх атрибутів.
-Клас "Рахунок" має два дочірні класи:
+++ Deposit: Money can be deposited only if the account is active. It must invoke the inherited method.
+++ Withdraw: Money can be withdrawn only if the account is active. It must invoke the inherited method.
 
-1. Рахунок заощаджень
-Додатковий атрибут:
+++ Monthly statement: If the number of withdrawals exceeds 4, an additional fee of $1,000 is charged for each extra withdrawal. When the statement is generated, it determines whether the account is active based on the balance.
 
-Активність рахунку (тип boolean). Якщо баланс менший за 10 000 грн, рахунок вважається неактивним; в іншому випадку – активним.
-Методи, що перевизначаються:
+++A new method, print, which returns the account balance, monthly fee, and the number of transactions (sum of deposits and withdrawals).
 
-Поповнити рахунок: поповнення можливе лише для активного рахунку. Викликає успадкований метод.
-Зняти гроші: зняття можливе лише для активного рахунку. Викликає успадкований метод.
-Місячна виписка: якщо кількість зняттів перевищує 4, стягується комісія в 1000 грн за кожне додаткове зняття. Після виписки перевіряється, чи активний рахунок.
-Друк інформації: повертає баланс, місячну комісію та кількість транзакцій (суму поповнень та зняттів).
+
+
+Current Account (Cuenta corriente):
+??? It has an overdraft attribute, which is initialized to zero.
+
+The following methods are redefined:
+
+Withdraw: Money is withdrawn from the account, updating its balance. It is possible to withdraw an amount greater than the balance. The excess amount becomes an overdraft.
+
+Deposit: Invokes the inherited method. If there is an overdraft, the deposited amount reduces the overdraft.
+
+Monthly statement: Invokes the inherited method.
+
+A new method, print, which returns the account balance, monthly fee, the number of transactions (sum of deposits and withdrawals), and the overdraft amount.

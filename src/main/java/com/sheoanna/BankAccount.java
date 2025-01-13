@@ -15,6 +15,26 @@ public class BankAccount {
         this.monthlyFee = 0;
     }
 
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
+
+    public void setNumberOfDeposits(int numberOfDeposits) {
+        this.numberOfDeposits = numberOfDeposits;
+    }
+
+    public void setNumberOfWithdrawals(int numberOfWithdrawals) {
+        this.numberOfWithdrawals = numberOfWithdrawals;
+    }
+
+    public void setAnnualInterestRate(float annualInterestRate) {
+        this.annualInterestRate = annualInterestRate;
+    }
+
+    public void setMonthlyFee(float monthlyFee) {
+        this.monthlyFee = monthlyFee;
+    }
+
     public void depositMoney(float renewal) {
         this.balance += renewal;
         this.numberOfDeposits += 1;
@@ -37,14 +57,34 @@ public class BankAccount {
         this.balance -= this.balance * monthlyFee;
         calculateMonthlyInterest();
     }
-    
+
+    public float getBalance() {
+        return balance;
+    }
+
+    public int getNumberOfDeposits() {
+        return numberOfDeposits;
+    }
+
+    public int getNumberOfWithdrawals() {
+        return numberOfWithdrawals;
+    }
+
+    public float getAnnualInterestRate() {
+        return annualInterestRate;
+    }
+
+    public float getMonthlyFee() {
+        return monthlyFee;
+    }
+
     @Override
     public String toString() {
-        return "\nBankAccount\n" +
-            "balance=" + balance +
-            ",\n numberOfDeposits=" + numberOfDeposits +
-            ",\n numberOfWithdrawals=" + numberOfWithdrawals +
-            ",\n annualInterestRate=" + annualInterestRate +
-            ",\n monthlyFee=" + monthlyFee;
+        return "\nBank Account: \n" +
+            "Balance=" + balance +
+            ",\nNumber Of Deposits=" + numberOfDeposits +
+            ",\nNumber Of Withdrawals=" + numberOfWithdrawals +
+            ",\nAnnual Interest Rate=" + annualInterestRate +
+            ",\nMonthly Fee=" + monthlyFee;
     }
 }
