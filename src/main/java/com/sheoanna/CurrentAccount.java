@@ -1,6 +1,6 @@
 package com.sheoanna;
 
-public class CurrentAccount extends BankAccount{
+public class CurrentAccount extends BankAccount {
     private float overdraft;
 
     public CurrentAccount(float balance, float annualInterestRate) {
@@ -9,9 +9,9 @@ public class CurrentAccount extends BankAccount{
     }
 
     @Override
-    public void withdrawMoney(float removal){
-        if(removal > this.getBalance()) {
-            if(this.getOverdraft() == 0){
+    public void withdrawMoney(float removal) {
+        if (removal > this.getBalance()) {
+            if (this.getOverdraft() == 0) {
                 this.overdraft = this.getBalance() - removal;
                 this.setBalance(0);
             } else {
@@ -20,21 +20,21 @@ public class CurrentAccount extends BankAccount{
         } else {
             this.setBalance(-removal);
         }
-        this.setNumberOfWithdrawals(this.getNumberOfWithdrawals() + 1 );
+        this.setNumberOfWithdrawals(this.getNumberOfWithdrawals() + 1);
     }
 
     public void depositMoney(float renewal) {
-        if(this.overdraft < 0){
+        if (this.overdraft < 0) {
             float excessAmount = this.overdraft + renewal;
-            if(excessAmount > 0) {
+            if (excessAmount > 0) {
                 super.depositMoney(excessAmount);
             } else {
                 this.overdraft = excessAmount;
                 super.depositMoney(0);
             }
-        } else{
+        } else {
             super.depositMoney(renewal);
-        } 
+        }
     }
 
     public float getOverdraft() {
@@ -44,9 +44,9 @@ public class CurrentAccount extends BankAccount{
     @Override
     public String toString() {
         return "\nBank Account:\n" +
-            "Balance=" + this.getBalance() +
-            ",\nNumber Of Transactions =" + this.getNumberOfDeposits() +this.getNumberOfWithdrawals() +
-            ",\nMonthly Fee=" + this.getMonthlyFee() +
-            ",\nOverdraft=" + this.overdraft;
+                "Balance=" + this.getBalance() +
+                ",\nNumber Of Transactions =" + this.getNumberOfDeposits() + this.getNumberOfWithdrawals() +
+                ",\nMonthly Fee=" + this.getMonthlyFee() +
+                ",\nOverdraft=" + this.overdraft;
     }
 }

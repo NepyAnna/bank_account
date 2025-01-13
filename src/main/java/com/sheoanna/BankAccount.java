@@ -20,20 +20,20 @@ public class BankAccount {
         this.numberOfDeposits += 1;
     }
 
-    public void withdrawMoney(float removal){
-        if(removal > this.balance) {
+    public void withdrawMoney(float removal) {
+        if (removal > this.balance) {
             return;
         }
         this.balance -= removal;
         this.numberOfWithdrawals += 1;
     }
 
-    public void calculateMonthlyInterest(){
-        this.monthlyFee = this.annualInterestRate/12;
+    public void calculateMonthlyInterest() {
+        this.monthlyFee = this.annualInterestRate / 12;
         this.balance += this.balance * monthlyFee;
     }
 
-    public void monthlyStatement(){
+    public void monthlyStatement() {
         this.balance -= this.balance * monthlyFee;
         calculateMonthlyInterest();
     }
@@ -81,10 +81,10 @@ public class BankAccount {
     @Override
     public String toString() {
         return "\nBank Account: \n" +
-            "Balance=" + balance +
-            ",\nNumber Of Deposits=" + numberOfDeposits +
-            ",\nNumber Of Withdrawals=" + numberOfWithdrawals +
-            ",\nAnnual Interest Rate=" + annualInterestRate +
-            ",\nMonthly Fee=" + monthlyFee;
+                "Balance=" + balance +
+                ",\nNumber Of Deposits=" + numberOfDeposits +
+                ",\nNumber Of Withdrawals=" + numberOfWithdrawals +
+                ",\nAnnual Interest Rate=" + annualInterestRate +
+                ",\nMonthly Fee=" + monthlyFee;
     }
 }

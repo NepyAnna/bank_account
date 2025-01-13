@@ -24,17 +24,17 @@ public class SavingsAccount extends BankAccount {
         } else {
             System.out.println("Account is inactive. Cannot withdraw money.");
         }
-        
+
     }
 
     @Override
-    public void monthlyStatement(){
-        if(checkIfActive()){
-        if(checkNumberOfWithdrawals()){
-            this.setBalance(this.getBalance() - (this.getNumberOfWithdrawals()-4)*1000);
+    public void monthlyStatement() {
+        if (checkIfActive()) {
+            if (checkNumberOfWithdrawals()) {
+                this.setBalance(this.getBalance() - (this.getNumberOfWithdrawals() - 4) * 1000);
+            }
+            super.monthlyStatement();
         }
-        super.monthlyStatement();
-    }
     }
 
     private boolean checkNumberOfWithdrawals() {
@@ -48,8 +48,8 @@ public class SavingsAccount extends BankAccount {
     @Override
     public String toString() {
         return "\nBank Account:\n" +
-            "Balance=" + this.getBalance() +
-            ",\nNumber Of Transactions =" + this.getNumberOfDeposits() +this.getNumberOfWithdrawals() +
-            ",\nMonthly Fee=" + this.getMonthlyFee();
+                "Balance=" + this.getBalance() +
+                ",\nNumber Of Transactions =" + this.getNumberOfDeposits() + this.getNumberOfWithdrawals() +
+                ",\nMonthly Fee=" + this.getMonthlyFee();
     }
 }
