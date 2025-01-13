@@ -15,14 +15,14 @@ The following methods are redefined:
 
 
 Current Account (Cuenta corriente):
-??? It has an overdraft attribute, which is initialized to zero.
+++ It has an overdraft attribute, which is initialized to zero.
 
 The following methods are redefined:
 
-Withdraw: Money is withdrawn from the account, updating its balance. It is possible to withdraw an amount greater than the balance. The excess amount becomes an overdraft.
+++ Withdraw: Money is withdrawn from the account, updating its balance. It is possible to withdraw an amount greater than the balance. The excess amount becomes an overdraft.
 
-Deposit: Invokes the inherited method. If there is an overdraft, the deposited amount reduces the overdraft.
+++ Deposit: Invokes the inherited method. If there is an overdraft, the deposited amount reduces the overdraft.
 
 Monthly statement: Invokes the inherited method.
 
-A new method, print, which returns the account balance, monthly fee, the number of transactions (sum of deposits and withdrawals), and the overdraft amount.
+++ A new method, print, which returns the account balance, monthly fee, the number of transactions (sum of deposits and withdrawals), and the overdraft amount.

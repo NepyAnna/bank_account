@@ -15,26 +15,6 @@ public class BankAccount {
         this.monthlyFee = 0;
     }
 
-    public void setBalance(float balance) {
-        this.balance = balance;
-    }
-
-    public void setNumberOfDeposits(int numberOfDeposits) {
-        this.numberOfDeposits = numberOfDeposits;
-    }
-
-    public void setNumberOfWithdrawals(int numberOfWithdrawals) {
-        this.numberOfWithdrawals = numberOfWithdrawals;
-    }
-
-    public void setAnnualInterestRate(float annualInterestRate) {
-        this.annualInterestRate = annualInterestRate;
-    }
-
-    public void setMonthlyFee(float monthlyFee) {
-        this.monthlyFee = monthlyFee;
-    }
-
     public void depositMoney(float renewal) {
         this.balance += renewal;
         this.numberOfDeposits += 1;
@@ -76,6 +56,26 @@ public class BankAccount {
 
     public float getMonthlyFee() {
         return monthlyFee;
+    }
+
+    public void setBalance(float balance) {
+        this.balance = balance;
+    }
+
+    public void setNumberOfDeposits(int numberOfDeposits) {
+        this.numberOfDeposits = numberOfDeposits;
+    }
+
+    public void setNumberOfWithdrawals(int numberOfWithdrawals) {
+        this.numberOfWithdrawals = numberOfWithdrawals;
+    }
+
+    public void setAnnualInterestRate(float annualInterestRate) {
+        this.annualInterestRate = annualInterestRate;
+    }
+
+    public void setMonthlyFee(float monthlyFee) {
+        this.monthlyFee = monthlyFee;
     }
 
     @Override
