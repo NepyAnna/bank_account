@@ -48,8 +48,12 @@ public class SavingsAccount extends BankAccount {
     @Override
     public String toString() {
         return "\nBank Account:\n" +
-                "Balance=" + this.getBalance() +
-                ",\nNumber Of Transactions =" + this.getNumberOfDeposits() + this.getNumberOfWithdrawals() +
-                ",\nMonthly Fee=" + this.getMonthlyFee();
+                "Balance = " + this.getBalance() +
+                ",\nNumber Of Transactions = " + (this.getNumberOfDeposits() + this.getNumberOfWithdrawals()) +
+                ",\nMonthly Fee = " + this.getMonthlyFee();
+    }
+
+    public boolean isActive() {
+        return isActive;
     }
 }

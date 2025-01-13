@@ -14,13 +14,14 @@ public class CurrentAccount extends BankAccount {
             if (this.getOverdraft() == 0) {
                 this.overdraft = this.getBalance() - removal;
                 this.setBalance(0);
+                this.setNumberOfWithdrawals(this.getNumberOfWithdrawals() + 1);
             } else {
                 this.overdraft -= removal;
+                this.setNumberOfWithdrawals(this.getNumberOfWithdrawals() + 1);
             }
         } else {
-            this.setBalance(-removal);
+            super.withdrawMoney(removal);
         }
-        this.setNumberOfWithdrawals(this.getNumberOfWithdrawals() + 1);
     }
 
     public void depositMoney(float renewal) {
@@ -28,6 +29,7 @@ public class CurrentAccount extends BankAccount {
             float excessAmount = this.overdraft + renewal;
             if (excessAmount > 0) {
                 super.depositMoney(excessAmount);
+                this.overdraft = 0;
             } else {
                 this.overdraft = excessAmount;
                 super.depositMoney(0);
