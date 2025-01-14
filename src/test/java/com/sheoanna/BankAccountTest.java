@@ -50,58 +50,6 @@ public class BankAccountTest {
     }
 
     @Test
-    void testGetAnnualInterestRate() {
-
-    }
-
-    @Test
-    void testGetBalance() {
-
-    }
-
-    @Test
-    void testGetMonthlyFee() {
-
-    }
-
-    @Test
-    void testGetNumberOfDeposits() {
-
-    }
-
-    @Test
-    void testGetNumberOfWithdrawals() {
-
-    }
-
-   
-
-    @Test
-    void testSetAnnualInterestRate() {
-
-    }
-
-    @Test
-    void testSetBalance() {
-
-    }
-
-    @Test
-    void testSetMonthlyFee() {
-
-    }
-
-    @Test
-    void testSetNumberOfDeposits() {
-
-    }
-
-    @Test
-    void testSetNumberOfWithdrawals() {
-
-    }
-
-    @Test
     void testToString() {
         String expected = "\nBank Account: \n" +
                 "Balance=1000.0,\n" +
